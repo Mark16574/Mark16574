@@ -4,27 +4,129 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mark | Translator & Developer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.8;
+      color: #222;
+    }
+    .lang-btn {
+      margin-right: 8px;
+      padding: 6px 14px;
+      border: 1px solid #222;
+      background: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .lang-btn.active {
+      background: #222;
+      color: white;
+    }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+  </style>
 </head>
 <body>
-  <h1>Hi, I'm Mark</h1>
-  <p>A multilingual freelancer based in Taiwan, specializing in translation and technical projects.</p>
 
-  <h2>What I Do</h2>
-  <ul>
-    <li>Translation — Japanese, English, and Mandarin Chinese</li>
-    <li>Technical Projects — Python scripting and automation</li>
-    <li>Video Editing — coming soon</li>
-  </ul>
+  <!-- 語言切換按鈕 -->
+  <div style="margin-bottom: 40px;">
+    <button class="lang-btn active" onclick="switchLang('en')">English</button>
+    <button class="lang-btn" onclick="switchLang('zh')">中文</button>
+    <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+  </div>
 
-  <h2>Languages</h2>
-  <ul>
-    <li>Mandarin Chinese — Native</li>
-    <li>Japanese — Fluent</li>
-    <li>English — Fluent</li>
-    <li>Indonesian — Currently learning</li>
-  </ul>
+  <!-- 英文 -->
+  <div id="en" class="lang-section active">
+    <h1>Hi, I'm Mark</h1>
+    <p>A multilingual freelancer based in Taiwan, specializing in translation and technical projects.</p>
 
-  <h2>Contact</h2>
-  <p>Interested in working together? Reach me at: maxwang610129@email.com</p>
+    <h2>What I Do</h2>
+    <ul>
+      <li>Translation — Japanese, English, and Mandarin Chinese</li>
+      <li>Technical Projects — Python scripting and automation</li>
+      <li>Video Editing — coming soon</li>
+    </ul>
+
+    <h2>Languages</h2>
+    <ul>
+      <li>Mandarin Chinese — Native</li>
+      <li>Japanese — Fluent</li>
+      <li>English — Fluent</li>
+      <li>Indonesian — Currently learning</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>Interested in working together? Reach me at: <a href="mailto:your@email.com">your@email.com</a></p>
+  </div>
+
+  <!-- 中文 -->
+  <div id="zh" class="lang-section">
+    <h1>你好，我是 Mark</h1>
+    <p>來自台灣的多語言自由工作者，專注於翻譯與技術專案。</p>
+
+    <h2>我的服務</h2>
+    <ul>
+      <li>翻譯服務 — 日文、英文、繁體中文</li>
+      <li>技術專案 — Python 腳本與自動化</li>
+      <li>影片剪輯 — 即將推出</li>
+    </ul>
+
+    <h2>語言能力</h2>
+    <ul>
+      <li>繁體中文 — 母語</li>
+      <li>日文 — 流利</li>
+      <li>英文 — 流利</li>
+      <li>印尼文 — 學習中</li>
+    </ul>
+
+    <h2>聯絡我</h2>
+    <p>歡迎合作洽詢：<a href="mailto:your@email.com">your@email.com</a></p>
+  </div>
+
+  <!-- 日文 -->
+  <div id="ja" class="lang-section">
+    <h1>はじめまして、Markです</h1>
+    <p>台湾を拠点とするマルチリンガルフリーランサーです。翻訳・技術プロジェクトを専門としています。</p>
+
+    <h2>サービス内容</h2>
+    <ul>
+      <li>翻訳 — 日本語・英語・繁体字中国語</li>
+      <li>技術プロジェクト — Pythonスクリプト・自動化</li>
+      <li>動画編集 — 近日公開予定</li>
+    </ul>
+
+    <h2>言語スキル</h2>
+    <ul>
+      <li>繁体字中国語 — 母語</li>
+      <li>日本語 — 流暢</li>
+      <li>英語 — 流暢</li>
+      <li>インドネシア語 — 学習中</li>
+    </ul>
+
+    <h2>お問い合わせ</h2>
+    <p>お気軽にご連絡ください：<a href="mailto:your@email.com">your@email.com</a></p>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      // 隱藏所有區塊
+      document.querySelectorAll('.lang-section').forEach(el => {
+        el.classList.remove('active');
+      });
+      // 移除所有按鈕的 active
+      document.querySelectorAll('.lang-btn').forEach(el => {
+        el.classList.remove('active');
+      });
+      // 顯示選擇的語言
+      document.getElementById(lang).classList.add('active');
+      // 讓對應按鈕變成 active
+      event.target.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
