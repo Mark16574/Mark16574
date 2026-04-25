@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 > nul
 cd /d E:\user\Desktop\Mark16574
 git add .
 set /p msg=請輸入更新說明（直接按 Enter 使用預設）: 
